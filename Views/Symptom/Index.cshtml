@@ -1,0 +1,12 @@
+@model SymptomInput
+<form asp-action="CheckSymptoms" method="post">
+    <label>Enter symptoms:</label><br />
+    <textarea name="Symptoms" rows="5" cols="50">@Model?.Symptoms</textarea><br />
+    <button type="submit">Submit</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model?.Response))
+{
+    <h4>AI Response:</h4>
+    <p>@Model.Response</p>
+}
